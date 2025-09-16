@@ -41,7 +41,6 @@ $(DEBUG_EXEC): $(SOURCES)
 clean:
 	rm -f $(RELEASE_EXEC) $(DEBUG_EXEC)
 
-
 # Информация о сборке
 info:
 	@echo "Компилятор: $(CXX)"
