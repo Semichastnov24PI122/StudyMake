@@ -1,19 +1,19 @@
-# Makefile для игры Kazino-Royal  
+ Makefile для игры Kazino-Royal  
 # Игра в кости с тремя попытками
 
 .PHONY: all debug release clean help test
 
 # Определяем компилятор C++
-CXX = g++
+    CXX = g++
 
 # Флаги компиляции  
-CXXFLAGS = -Wall -Wextra -pedantic -std=c++17  
-RELEASE_FLAGS = -O2 -DNDEBUG  
-DEBUG_FLAGS = -g -O0 -DDEBUG
+    CXXFLAGS = -Wall -Wextra -pedantic -std=c++17  
+    RELEASE_FLAGS = -O2 -DNDEBUG  
+    DEBUG_FLAGS = -g -O0 -DDEBUG
 
 # Имена исполняемых файлов  
-RELEASE_EXEC = kazino-royal  
-DEBUG_EXEC = kazino-royal-dbg
+    RELEASE_EXEC = kazino-royal  
+    DEBUG_EXEC = kazino-royal-dbg
 
 # Исходные файлы  
 SOURCES = Kazino-Royal.cpp
@@ -22,13 +22,13 @@ SOURCES = Kazino-Royal.cpp
 all: release
 
 # Release сборка  
-release: CXXFLAGS += $(RELEASE_FLAGS)  
-release: $(RELEASE_EXEC)
+    release: CXXFLAGS += $(RELEASE_FLAGS)
+    release: $(RELEASE_EXEC)
 
 # Debug сборка  
 debug: CXXFLAGS += $(DEBUG_FLAGS)
 debug: $(DEBUG_EXEC)
-
+    
 # Сборка release версии  
 $(RELEASE_EXEC): $(SOURCES)
     $(CXX) $(CXXFLAGS) $(SOURCES) -o $(RELEASE_EXEC)
